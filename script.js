@@ -19,8 +19,11 @@ function setup() {
 }
 
 function draw() {
-  scale(.75);
-  translate(200, 150);
+  background(0);
+  if (!mouseIsPressed){
+    scale(.75);
+    translate(200, 150);
+  }
   for(var i = 0; i < rowCount; i++ ) {
     var latitude = accidents.getNum(i, "LATTITUDE");
     var longitude = accidents.getNum(i, "LONGITUDE");
@@ -49,5 +52,5 @@ function plot(lat, lng, type) {
     default:
      fill(255);
   }
-  ellipse(x, y, 1);
+  ellipse(x, y, 1.5);
 }
